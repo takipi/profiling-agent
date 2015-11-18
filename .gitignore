@@ -7,12 +7,6 @@
 # sbteclipse plugin
 .target
 
-# Eclipse
-.metadata
-.classpath
-.project
-.settings/
-
 # Gradle
 .gradle
 .gradletasknamecache
