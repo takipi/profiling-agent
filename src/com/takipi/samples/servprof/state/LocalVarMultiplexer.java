@@ -1,8 +1,6 @@
 package com.takipi.samples.servprof.state;
 
 import java.util.Arrays;
-import java.util.Collection;
-import java.util.Collections;
 
 import com.takipi.samples.servprof.inst.ProfilerLocalVariablesTable;
 
