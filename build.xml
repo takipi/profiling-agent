@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="profiling-agent" default="main" basedir=".">
+	
+	<!-- Directory definitions -->
+	<property name="src.dir" location="src" />
+	<property name="src.agent.dir" location="${src.dir}/com/takipi" />
+	
+	<property name="bin.dir" location="bin" />
+	<property name="jar.dir" location="jar" />
+	
+	<!-- Delete directories -->
+	<target name="clean">
+		<delete includeemptydirs="true">
+			<fileset dir="${bin.dir}" includes="**/*" defaultexcludes="no"/>
+		</delete>
+		<delete file="${jar.dir}/profiling-agent.jar" />
+	</target>
+
+	<!-- Create directories -->
+	<target name="makedir">
+		<mkdir dir="${bin.dir}" />
+		<mkdir dir="${jar.dir}" />
+	</target>
+	
+	<!-- Create CLASSes -->
+	<target name="compile" depends="clean, makedir">
+		<javac destdir="${bin.dir}" includeantruntime="false" debug="true">
+			<classpath>
+			        <pathelement path="/Library/Java/JavaVirtualMachines/jdk1.8.0_51.jdk/Contents/Home/lib/tools.jar"/>
+			    </classpath>
+			<src path="${src.agent.dir}" />
+		</javac>
+	</target>
+
+	<!-- Create JAR -->
+	<target name="jar" depends="compile">
+		<jar jarfile="${jar.dir}/profiling-agent.jar" basedir="${bin.dir}" >
+			<manifest>
+				<attribute name="Premain-Class" value="com.takipi.samples.servprof.Agent" />
+				<attribute name="Agent-Class" value="com.takipi.samples.servprof.Agent" />
+				<attribute name="Main-Class" value="com.takipi.samples.servprof.Agent" />
+				<attribute name="Can-Redefine-Classes" value="true" />
+				<attribute name="Can-Retransform-Classes" value="true" />
+			</manifest>
+		</jar>
+	</target>
+
+	<!-- Complete build -->
+	<target name="main" depends="compile, jar">
+		<description>Main target</description>
+	</target>
+	
+</project>

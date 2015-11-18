@@ -1,0 +1,9 @@
+{
+  librato: {
+    email:  "talw.gx@gmail.com",
+    token:  "3c308d41c9967f1b3b4a2b9a12f88f34b12738ecf4ffc244daaa6b24802eb326",
+    source: "profile-agent"
+  }
+  , backends: ["statsd-librato-backend"]
+  , port: 8125
+}
