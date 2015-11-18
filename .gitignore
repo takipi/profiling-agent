@@ -1,0 +1,62 @@
+# Compiled Java classes
+*.class
+
+# Mobile Tools for Java (J2ME)
+.mtj.tmp/
+
+# sbteclipse plugin
+.target
+
+# Eclipse
+.metadata
+.classpath
+.project
+.settings/
+
+# Gradle
+.gradle
+.gradletasknamecache
+
+# General temp/artifact files
+bin/
+tmp/
+*.tmp
+*.bak
+*.swp
+*~.nib
+local.properties
+build/
+target/
+out/
+Debug*/
+Release*/
+
+# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
+hs_err_pid*
+
+# Visual Studio temp files
+*.opensdf
+*.sdf
+*.suo
+*.ipch
+*.vcxproj.user
+
+# Xcode user data
+xcuserdata/
+
+### Intellij ###
+# Covers JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm
+*.iml
+
+## Directory-based project format:
+.idea/
+
+## File-based project format:
+*.ipr
+*.iws
+
+# IntelliJ
+out/
+
+# mpeltonen/sbt-idea plugin
+.idea_modules/
